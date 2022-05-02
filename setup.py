@@ -11,11 +11,13 @@ for p in packages:
 
 setup(
     name="wolfpackutil",
-    version="0.1.5",
+    version="0.1.5.1",
     author="Kalka",
     author_email="kalka2088@gmail.com",
     description="Python util library for WolfpackMC packages. https://github.com/WolfpackMC",
     url="https://github.com/WolfpackMC/wolfpackutil",
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     project_urls={
         "Bug Tracker": "https://github.com/WolfpackMC/wolfpackutil/issues",
     },
