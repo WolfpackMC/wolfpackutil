@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name="wolfpackutil",
-    version="0.1.2",
+    version="0.1.3",
     author="Kalka",
     author_email="kalka2088@gmail.com",
     description="Python util library for WolfpackMC packages. https://github.com/WolfpackMC",
@@ -16,9 +16,9 @@ setuptools.setup(
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.10",
     install_requires=[
-        "owoify-py>=1.1.2",
-        "pyfiglet>=0.8.post1",
-        "python-dateutil>=0.8.post1",
-        "rich>=12.3.0"
+        "owoify-py",
+        "pyfiglet",
+        "python-dateutil",
+        "rich"
     ]
 )
