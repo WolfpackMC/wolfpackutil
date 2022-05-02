@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name="wolfpackutil",
-    version="0.1.1",
+    version="0.1.2",
     author="Kalka",
     author_email="kalka2088@gmail.com",
     description="Python util library for WolfpackMC packages. https://github.com/WolfpackMC",
