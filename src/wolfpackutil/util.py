@@ -6,15 +6,26 @@ from pathlib import Path
 from random import choice
 from time import time
 
+from requests import Session as r_Session
 from dateutil import tz
 from owoify import owoify
 from pyfiglet import Figlet
 from rich.console import Console
+from tinydb import TinyDB, Query
+
+
+class Session(r_Session):
+    pass
+
+
+class DB(TinyDB):
+    def __init__(self, path):
+        super().__init__(path)
+        self.q = Query()
 
 
 class Parser(ArgumentParser):
     def args(self, description):
-        super()
         self.description = description
         return self
 
@@ -22,8 +33,6 @@ class Parser(ArgumentParser):
 class Log(Console):
     log_contents = {}
     log_cache = ""
-
-    f = Figlet()
 
     def warn(self, msg):
         logging.root.level <= logging.WARN and self.log(f"[yellow][WARN][white] {msg}")
@@ -53,6 +62,7 @@ class Log(Console):
             logging.root.level = logging.INFO
 
     def fancy_intro(self, name, description='', version=''):
+        f = Figlet()
         keywords = choice(
             ['A custom made Minecraft modpack script. Nothing special, hehe.',
              'Please don\'t tell anyone about this...',
@@ -62,7 +72,7 @@ class Log(Console):
              ]
         )
         self.info(''.join(['####' for _ in range(16)]))
-        self.info(f'\n[blue]{self.f.renderText(name)}[white]\n\t[green]{version}[white]\n\t\t{owoify(keywords)}')
+        self.info(f'\n[blue]{f.renderText(name)}[white]\n\t[green]{version}[white]\n\t\t{owoify(keywords)}')
         self.info(''.join(['####' for _ in range(16)]))
         self.info(description)
 
