@@ -11,7 +11,7 @@ for p in packages:
 
 setup(
     name="wolfpackutil",
-    version="0.1.4",
+    version="0.1.5",
     author="Kalka",
     author_email="kalka2088@gmail.com",
     description="Python util library for WolfpackMC packages. https://github.com/WolfpackMC",
@@ -26,6 +26,7 @@ setup(
         "owoify-py",
         "pyfiglet",
         "python-dateutil",
-        "rich"
+        "rich",
+        "tinydb"
     ]
 )
